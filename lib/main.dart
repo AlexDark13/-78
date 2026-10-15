@@ -170,6 +170,8 @@ class GalleryPage extends StatelessWidget {
           color: const Color(0xFF251722),
 child: index == 0
     ? Image.asset('assets/cards/00_fool.png', fit: BoxFit.cover)
+                  : index == 1
+                      ? Image.asset('assets/cards/01_magician.png', fit: BoxFit.cover)
         : Center(child: Text(
             'Аркан\n${index + 1}',
             textAlign: TextAlign.center,
