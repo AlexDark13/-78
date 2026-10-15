@@ -1,5 +1,6 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
+import 'fool_detail_page.dart';
 
 void main() => runApp(const JapaneseTarotApp());
 
@@ -154,7 +155,18 @@ class GalleryPage extends StatelessWidget {
           mainAxisSpacing: 8,
         ),
         itemCount: 78,
-        itemBuilder: (context, index) => Card(
+    itemBuilder: (context, index) => GestureDetector(
+        onTap: () {
+            if (index == 0) {
+                  Navigator.push(
+                          context,
+                                  MaterialPageRoute(
+                                            builder: (context) => const FoolDetailPage(),
+                                                    ),
+                                                          );
+                                                              }
+                                                                },
+                                                                  child: Card(
           color: const Color(0xFF251722),
 child: index == 0
     ? Image.asset('assets/cards/00_fool.png', fit: BoxFit.cover)
@@ -165,6 +177,9 @@ child: index == 0
           )),
         ),
       ),
+      ),
     );
   }
-}
+  }
+  
+
